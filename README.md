@@ -1,2 +1,2 @@
 # GoogleCertificateCitibikeCapstone
-This is my completed project of the Google Data Analyst Certificate Citibike Capstone Project.
+This is my completed project of the Google Data Analytics Professional Certificate Citibike Capstone Project.
