@@ -163,4 +163,22 @@ There were a total of 4280349 riders for the year 2023. First lets look at the n
 
 As you can see, the summer months are the most popular times in general with the number of riders dropping at the beginning of fall and into the winter months while steadily increasing at the beginning of Spring. 
 
-Now to compare the amount of members vs casual riders. The below graphic shows that 64.56% of riders are member while 35.44% are casual ridres.
+Now to compare the amount of members vs casual riders. The below graphic shows that 64.56% of riders are member while 35.44% are casual riders.
+
+![viz for monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides.png)
+
+Monthly both member and casual riders tend to use the service mostly during the summer months while dropping off during fall and into winter.
+
+![viz for monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides%20per%20Month.png)
+
+To keep going with the theme of time lets look at what times during the week that riders use the service. The first visual shows in general the most popular days of the week for both member and casual. The second visual will show the most popular days of the week that members riders ride versus casual. The third will show specific start times for member and casual riders.
+
+![viz for day of week](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Number%20of%20Rides%20per%20Day%20of%20Week.png)
+
+![viz for day of week member vs casual](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Rides%20per%20Day%20of%20Week.png)
+
+![viz for start times member versus casual](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Start%20Times.png)
+
+In general the number of riders during the week seem to be pretty even across all days with only Sunday and Monday seeing a drop. However, casual riders and member riders do seem to ride at different times during the week. Casual riders tend to ride more during the weekends while member tend to ride more during the week. Additionally looking at the start times of the riders you can see that casual rider start times increase steadily throughout the day while member riders have two peaks. The first peak is between the times 6-9am while the second peak is between the times of 3-7pm.
+
+Analyzing the above information it can be said that casual riders take trips mainly on the weekends for casual activities, while members will use the service during the week for their work commutes.
