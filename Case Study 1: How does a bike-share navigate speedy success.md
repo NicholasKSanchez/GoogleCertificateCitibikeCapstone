@@ -159,4 +159,8 @@ After cleaning and transforming the data was completed I began my analysis of th
 
 There were a total of 4280349 riders for the year 2023. First lets look at the number of general riders per month.
 
-![viz for monthly riders]()
+![viz for monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Number%20of%20Rides%20per%20Month.png)
+
+As you can see, the summer months are the most popular times in general with the number of riders dropping at the beginning of fall and into the winter months while steadily increasing at the beginning of Spring. 
+
+Now to compare the amount of members vs casual riders. The below graphic shows that 64.56% of riders are member while 35.44% are casual ridres.
