@@ -165,11 +165,11 @@ As you can see, the summer months are the most popular times in general with the
 
 Now to compare the amount of members vs casual riders. The below graphic shows that 64.56% of riders are member while 35.44% are casual riders.
 
-![viz for monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides.png)
+![viz casual vs member riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides.png)
 
 Monthly both member and casual riders tend to use the service mostly during the summer months while dropping off during fall and into winter.
 
-![viz for monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides%20per%20Month.png)
+![viz for casual vs members monthly riders](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Number%20of%20Rides%20per%20Month.png)
 
 To keep going with the theme of time lets look at what times during the week that riders use the service. The first visual shows in general the most popular days of the week for both member and casual. The second visual will show the most popular days of the week that members riders ride versus casual. The third will show specific start times for member and casual riders.
 
@@ -182,3 +182,28 @@ To keep going with the theme of time lets look at what times during the week tha
 In general the number of riders during the week seem to be pretty even across all days with only Sunday and Monday seeing a drop. However, casual riders and member riders do seem to ride at different times during the week. Casual riders tend to ride more during the weekends while member tend to ride more during the week. Additionally looking at the start times of the riders you can see that casual rider start times increase steadily throughout the day while member riders have two peaks. The first peak is between the times 6-9am while the second peak is between the times of 3-7pm.
 
 Analyzing the above information it can be said that casual riders take trips mainly on the weekends for casual activities, while members will use the service during the week for their work commutes.
+
+When looking at the average amount of time each ride takes in minutes we get the below graphic.
+
+![viz for member vs casual weekly ride lengths](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20vs%20Casual%20Day%20of%20Week%20Ride%20Lengths.png)
+
+From the above that we can see that ride lengths for casual members are much longer on the weekends, decrease once the work week begins, and then increase near the weekend. While member riders have consistent ride times during the week with a slight increase when the weekend comes. Finally for the last set of visuals we will look at the top destinations for casual riders and members.
+
+![viz for casual end stations](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Casual%20Rider%20Popular%20End%20Stations.png)
+
+![viz for member end stations](https://github.com/NicholasKSanchez/GoogleCertificateCitibikeCapstone/blob/main/Visuals/Member%20Popular%20End%20Stations.png)
+
+The above visals show the top 10 end stations for casual and member riders. The casual riders popular end stations show locations such as Millennium Park where the bean is located as well as the ribbon and outdoor ice skating rink, Streeter Dr & Grand Ave where the Navy Pier is located which another popular tourist spot etc. Meanwhile the popular member locations such as Clinton st & Washgington Blvs as well as Kingsbury St & Kinzie St are not near any popular tourist destinations and are instead near commercial areas.
+
+To summarize, casual riders use the bike service mostly during the weekends with their destinations being overwhelmingly tourist destinations such as Millenium Park and Navy Pear. Additionally, Casual riders will use the service throughout the day instead of at specific peak times. Finally, casual riders will take longer trips than members while the amount of trips is less than members.
+
+Member riders will use the service mostly during the week with their destinations being commercial districts and resedential areas. Additionally, member riders will use the service at two different peak times, 6-9am and 3-7pm corresponding to times where people usually commute to and from work. Finally member riders trip lengths are shorter and remain roughly the same length throughout the week.
+
+### Step 6: Act
+
+With the above analysis about how casual and member riders use the service differently I would like to share the three recommendations that I have to turn casual riders into member riders:
+
+1. Since both types of riders use the service more during the summer targetd marketing campaigns should be held during these months and in the areas that receive the most traffic from casual riders.
+2. Casual riders most often use the service on the weekends so introducting a weekend membership should intice those weekend warriors into buying a membership.
+3. Working with local eateries around the most popular stations to provide monthly BOGOS or discounts for members could also provide a way to convert the casual riders into members.
+
