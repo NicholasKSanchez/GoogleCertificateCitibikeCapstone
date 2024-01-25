@@ -1,0 +1,223 @@
+This contains the Queries I used during my Analysis of the data set.
+
+- Query used to determine popular starting stations
+
+SELECT 
+  member_casual as rider_type,
+  start_station_name as start_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+WHERE
+  member_casual = 'casual'
+GROUP BY
+  member_casual, start_station
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- Query used to determine popular day of the week as well as the bike type used on those days
+
+SELECT 
+  member_casual as member_type,
+  day_of_week,
+  CASE
+    WHEN day_of_week  = 1 THEN 'Sunday'
+    WHEN day_of_week  = 2 THEN 'Monday'
+    WHEN day_of_week  = 3 THEN 'Tuesday'
+    WHEN day_of_week  = 4 THEN 'Wednesday'
+    WHEN day_of_week  = 5 THEN 'Thursday'
+    WHEN day_of_week  = 6 THEN 'Friday'
+    WHEN day_of_week  = 7 THEN 'Saturday'
+  END AS day_name,
+  COUNT(*) AS number_of_rides,
+  rideable_type as bike_type 
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  day_of_week, member_type, bike_type
+Order BY
+  member_type, bike_type, day_of_week
+
+-Query used to find most popular start stations overall
+
+SELECT 
+  start_station_name as start_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  start_station
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- Overall ride length for members and casual
+
+SELECT 
+  member_casual as rider_type,
+  AVG(ride_length) as average_ride_length
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  rider_type
+
+- rides per month
+
+SELECT 
+  CASE
+    WHEN EXTRACT(month from started_at)  = 1 THEN 'January'
+    WHEN EXTRACT(month from started_at)  = 2 THEN 'February'
+    WHEN EXTRACT(month from started_at)  = 3 THEN 'March'
+    WHEN EXTRACT(month from started_at)  = 4 THEN 'April'
+    WHEN EXTRACT(month from started_at)  = 5 THEN 'May'
+    WHEN EXTRACT(month from started_at)  = 6 THEN 'June'
+    WHEN EXTRACT(month from started_at)  = 7 THEN 'July'
+    WHEN EXTRACT(month from started_at)  = 8 THEN 'August'
+    WHEN EXTRACT(month from started_at)  = 9 THEN 'September'
+    WHEN EXTRACT(month from started_at)  = 10 THEN 'October'
+    WHEN EXTRACT(month from started_at)  = 11 THEN 'November'
+    WHEN EXTRACT(month from started_at)  = 12 THEN 'December'
+  END AS month_name,
+  COUNT(ride_id) AS number_of_rides 
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  month_name
+
+- popular casual end stations
+
+SELECT 
+  member_casual as rider_type,
+  end_station_name as end_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+WHERE
+  member_casual = 'casual'
+GROUP BY
+  end_station, rider_type
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- all rider length by month
+
+SELECT 
+  member_casual as rider_type,
+  EXTRACT(month from started_at) as month_number,
+  CASE
+    WHEN EXTRACT(month from started_at)  = 1 THEN 'January'
+    WHEN EXTRACT(month from started_at)  = 2 THEN 'February'
+    WHEN EXTRACT(month from started_at)  = 3 THEN 'March'
+    WHEN EXTRACT(month from started_at)  = 4 THEN 'April'
+    WHEN EXTRACT(month from started_at)  = 5 THEN 'May'
+    WHEN EXTRACT(month from started_at)  = 6 THEN 'June'
+    WHEN EXTRACT(month from started_at)  = 7 THEN 'July'
+    WHEN EXTRACT(month from started_at)  = 8 THEN 'August'
+    WHEN EXTRACT(month from started_at)  = 9 THEN 'September'
+    WHEN EXTRACT(month from started_at)  = 10 THEN 'October'
+    WHEN EXTRACT(month from started_at)  = 11 THEN 'November'
+    WHEN EXTRACT(month from started_at)  = 12 THEN 'December'
+  END AS month_name,
+  AVG(ride_length) as average_ride_length
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  rider_type, month_number, month_name
+ORDER BY
+  rider_type, month_number
+
+- popular member end stations
+
+SELECT 
+  member_casual as rider_type,
+  end_station_name as end_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+WHERE
+  member_casual = 'member'
+GROUP BY
+  end_station, rider_type
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- member vs casual day of week ride length
+
+SELECT 
+  member_casual as rider_type,
+  day_of_week,
+  CASE
+    WHEN day_of_week  = 1 THEN 'Sunday'
+    WHEN day_of_week  = 2 THEN 'Monday'
+    WHEN day_of_week  = 3 THEN 'Tuesday'
+    WHEN day_of_week  = 4 THEN 'Wednesday'
+    WHEN day_of_week  = 5 THEN 'Thursday'
+    WHEN day_of_week  = 6 THEN 'Friday'
+    WHEN day_of_week  = 7 THEN 'Saturday'
+  END AS day_name,
+  AVG(ride_length) as average_ride_length
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  rider_type, day_name, day_of_week
+ORDER BY
+  rider_type, day_of_week
+
+- overall popular end stations
+SELECT 
+  end_station_name as end_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  end_station
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- popular start times in a day
+
+SELECT 
+  member_casual as rider_type,
+  EXTRACT(HOUR FROM started_at) as start_hour,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  rider_type, start_hour
+ORDER BY
+  rider_type, start_hour
+
+- popular start stations for members
+
+SELECT 
+  member_casual as rider_type,
+  start_station_name as start_station,
+  COUNT(*) as number_of_rides
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+WHERE
+  member_casual = 'member'
+GROUP BY
+  member_casual, start_station
+ORDER BY
+  number_of_rides DESC
+Limit 10
+
+- members vs casual rides per month
+
+SELECT 
+  EXTRACT(month from started_at) as month_number,
+  CASE
+    WHEN EXTRACT(month from started_at)  = 1 THEN 'January'
+    WHEN EXTRACT(month from started_at)  = 2 THEN 'February'
+    WHEN EXTRACT(month from started_at)  = 3 THEN 'March'
+    WHEN EXTRACT(month from started_at)  = 4 THEN 'April'
+    WHEN EXTRACT(month from started_at)  = 5 THEN 'May'
+    WHEN EXTRACT(month from started_at)  = 6 THEN 'June'
+    WHEN EXTRACT(month from started_at)  = 7 THEN 'July'
+    WHEN EXTRACT(month from started_at)  = 8 THEN 'August'
+    WHEN EXTRACT(month from started_at)  = 9 THEN 'September'
+    WHEN EXTRACT(month from started_at)  = 10 THEN 'October'
+    WHEN EXTRACT(month from started_at)  = 11 THEN 'November'
+    WHEN EXTRACT(month from started_at)  = 12 THEN 'December'
+  END AS month_name,
+  rideable_type as bike_type,
+  member_casual as member_type,
+  COUNT(*) AS number_of_rides 
+FROM `citibike-409417.Citibike_2023.Full_Year` 
+GROUP BY
+  month_name, month_number, bike_type, member_type
+ORDER BY
+  member_type, bike_type, month_number
